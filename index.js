@@ -17,7 +17,7 @@ let lastNotificationSent;
 
 console.log(pc.dim("Scheduling stock check job..."));
 
-const job = schedule.scheduleJob('*/2 * * * *', function () {
+const job = schedule.scheduleJob('*/1 * * * *', function () {
     console.log(pc.dim("Checking for stock..."));
 
     axios.get(`https://www.apple.com/shop/fulfillment-messages?pl=true&mts.0=regular&cppart=${carrier}&parts.0=${modelNumber}&location=${location}`).then((response) => {
